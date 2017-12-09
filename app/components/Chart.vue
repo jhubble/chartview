@@ -5,7 +5,7 @@
                     <h2>{{chartType}}</h2>
                     <div v-if="chartData" class="chart">
                         <h3>{{descriptiveText[chartType]}}</h3>
-                        <line-chart :data="chartData"></line-chart>
+                        <line-chart :download="true" :min="0" :max="100" :data="chartData"></line-chart>
                     </div>
                     <div v-else class="error">
                         Unable to load chart:
@@ -52,7 +52,8 @@
                         if (response.data && response.data.Data) {
                             console.log("RESPONSE:", response);
                             this.chartData = response.data.Data.map((k) => {
-                                return [k.timestamp, k.Value];
+                                // convert second timestamp(unix) to milliseconds (JS)
+                                return [new Date(k.timestamp*1000), k.Value];
                             });
                             this.name = response.data.type;
                             console.log("CHART DATA:", this.chartData);

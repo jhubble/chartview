@@ -3,3 +3,4 @@ public/
 *.iml
 package-lock.json
 .idea/
+*.swp

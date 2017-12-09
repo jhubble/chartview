@@ -37,14 +37,15 @@ func main() {
 		datatype := r.URL.Query().Get("type")
 		timeRange := r.URL.Query().Get("range")
 		result := ""
+                number := 100
 		if datatype == "storage" {
-			result = generate_data(timeRange, -1, 2, datatype)
+			result = generate_data(number,timeRange, -1, 2, datatype)
 		} else if datatype == "cpu" {
-			result = generate_data(timeRange, -5, 5, datatype)
+			result = generate_data(number,timeRange, -5, 5, datatype)
 		} else if datatype == "network" {
-			result = generate_data(timeRange, -7, 7, datatype)
+			result = generate_data(number,timeRange, -7, 7, datatype)
 		} else if datatype == "memory" {
-			result = generate_data(timeRange, -4, 5, datatype)
+			result = generate_data(number,timeRange, -4, 5, datatype)
 		} else {
 			result = "ERROR. Chart type not recognized";
 		}
@@ -62,14 +63,13 @@ func main() {
 // min is the minimum value that a data point can differ from previous (e.g. -5)
 // max is the maximum value that a data point can differ from previous (e.g. 10)
 func generate_data(number int, interval string, min int, max int, datatype string) string {
-	number := 100  // number of points to display
 	timeRange := 0 // time period to display (in milliseconds)
 
 	if interval == "week" {
-		timeRange = 1000 * 60 * 60 * 24 * 7
+		timeRange = 60 * 60 * 24 * 7
 	}
 	if interval == "hour" {
-		timeRange = 1000 * 60 * 60
+		timeRange = 60 * 60
 	}
 
 	millisBetweenPoints := timeRange / number

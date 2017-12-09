@@ -8,7 +8,6 @@ import Vuetify from 'vuetify'
 
 
 import routes from './config/routes';
-import App from './App';
 
 Vue.use(Router);
 Vue.use(VueChartkick, { Chartkick });
