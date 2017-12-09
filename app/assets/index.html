@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Chart Viewer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/vuetify.css" rel="stylesheet">
+    <link href="css/components.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+</head>
+<body>
+<div id="app">
+    <v-app>
+        <v-content>
+            <v-container fluid grid-list-md><router-view></router-view></v-container>
+        </v-content>
+    </v-app>
+
+</div>
+<script type="text/javascript" src="vendor.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript">
+    require('index');
+</script>
+</body>
+</html>

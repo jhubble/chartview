@@ -1,0 +1,32 @@
+{
+  "name": "time-viewer",
+  "version": "1.0.0",
+  "description": "View time series data",
+  "main": "chart.html",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.17.1",
+    "chart.js": "^2.7.1",
+    "chartkick": "^2.2.4",
+    "vue-chartkick": "^0.2.0",
+    "vue-router": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-brunch": "^6.0.6",
+    "babel-plugin-transform-runtime": "^6.22.0",
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-stage-3": "^6.22.0",
+    "brunch": "^2.10.6",
+    "copyfilemon-brunch": "^3.3.0",
+    "css-loader": "^0.28.7",
+    "vue": "^2.5.9",
+    "vue-brunch": "^2.0.1",
+    "vue-loader": "^13.5.0",
+    "vuetify": "^0.17.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jeremy Hubble",
+  "license": "MIT"
+}
