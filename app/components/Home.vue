@@ -6,15 +6,15 @@
                 <v-container fluid>
                     <v-layout row wrap>
                         <v-flex xs12 sm3 md3>
-                            <v-checkbox label="cpu"
-                                        v-model="cpu"
-                                        value="cpu"
-                                        hide-details></v-checkbox>
-                        </v-flex>
-                        <v-flex xs12 sm3 md3>
                             <v-checkbox label="storage"
                                         v-model="storage"
                                         value="storage"
+                                        hide-details></v-checkbox>
+                        </v-flex>
+                        <v-flex xs12 sm3 md3>
+                            <v-checkbox label="cpu"
+                                        v-model="cpu"
+                                        value="cpu"
                                         hide-details></v-checkbox>
                         </v-flex>
                         <v-flex xs12 sm3 md3>
@@ -38,8 +38,8 @@
             </v-card-text>
         </v-card>
         <v-layout row wrap>
-            <chart v-if="cpu" chartType="cpu" :range="range"></chart>
             <chart v-if="storage" chartType="storage" :range="range"></chart>
+            <chart v-if="cpu" chartType="cpu" :range="range"></chart>
             <chart v-if="memory" chartType="memory" :range="range"></chart>
             <chart v-if="network" chartType="network" :range="range"></chart>
         </v-layout>
@@ -56,8 +56,8 @@
         data() {
             return {
                 range: "week",
-                network: null,
                 storage: "storage",
+                network: null,
                 cpu: null,
                 memory: null
             }
